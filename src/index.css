@@ -143,3 +143,89 @@ img{ max-width: 100%; display:block; }
 .footer__links{ display:flex; gap:16px; }
 .footer__links a{ color: var(--text); opacity:.8; }
 .footer__links a:hover{ opacity:1; }
+
+/* ====== LOGIN FORM ====== */
+ .login-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+          font-family: Arial, sans-serif;
+        }
+
+        .login-form {
+          background-color: #ffffff38;
+          padding: 40px;
+          border-radius: 10px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+          width: 100%;
+          max-width: 30vw;
+        }
+
+        .login-form h2 {
+          text-align: center;
+          margin-bottom: 30px;
+          color: #fffcfcff;
+        }
+
+        .login-form label {
+          display: block;
+          margin-bottom: 5px;
+          color: #dad8d8ff;
+          font-weight: bold;
+        }
+
+        .login-form input {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 20px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-size: 14px;
+          background-color: #d8d8d8ff;
+          color: #000000ff;
+
+        }
+
+        .login-form input:focus {
+          border-color: #007bff;
+          outline: none;
+        }
+
+        .login-form button {
+          width: 100%;
+          padding: 12px;
+          background-color: #007bff;
+          color: #fff;
+          font-size: 16px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+
+        .login-form button:hover {
+          background-color: #0056b3;
+        }
+
+        .register-text {
+          text-align: center;
+          margin-top: 15px;
+          font-size: 14px;
+          color: #555;
+        }
+
+        .register-text a {
+          color: #007bff;
+          text-decoration: none;
+        }
+
+        .register-text a:hover {
+          text-decoration: underline;
+        }
+
+          .error {
+          color: #ff4d4f;
+          text-align: center;
+          margin-top: 10px;
+        }
+      
