@@ -1,7 +1,7 @@
 import { MOCK_BOOTCAMPS } from "../mocks/bootcamps.mock";
 
 export const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
-const FORCE_MOCK = import.meta.env.VITE_FORCE_MOCK === "true";
+const FORCE_MOCK = import.meta.env.VITE_FORCE_MOCK === "false";
 
 // valida que tenga forma de JWT (tres partes base64url)
 const isLikelyJwt = (t) => /^[A-Za-z0-9\-_]+\.[A-Za-z0-9\-_]+\.[A-Za-z0-9\-_]+$/.test(t || "");
@@ -29,4 +29,20 @@ export const fetchBootcampsWithFallback = async () => {
   } catch {
     return MOCK_BOOTCAMPS;
   }
+};
+
+export const loginUser = async (usuario,contrasena) => {
+  const res = await fetch(`${API_URL}/api/auth/login`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ username: usuario, password: contrasena }),
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(`API error ${res.status}`);
+  if (data.token){
+    localStorage.setItem("token", data.token);
+  }
+  return data;
 };
